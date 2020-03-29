@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+    import { StyleSheet } from 'react-native'
 import Constants from 'expo-constants'
 
 
@@ -58,7 +58,7 @@ export default StyleSheet.create({
     incidentValue: {
         marginTop: 8,
         fontSize: 15,
-        marginBottom: 24,
+        marginBottom: 32,
         color: '#737380'
     },
 

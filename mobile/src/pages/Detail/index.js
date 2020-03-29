@@ -49,7 +49,7 @@ export default function Detail() {
         <Text style={styles.incidentValue}>{incident.title}</Text>
 
         <Text style={styles.incidentProperty}>VALOR:</Text>
-        <Text style={styles.incidentValue}>
+        <Text style={[styles.incidentValue, { marginBottom: 0}]}>
           {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
             .format(incident.value)}
         </Text>

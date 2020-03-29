@@ -15,11 +15,11 @@ export default function Incidents() {
   const [loading, setLoading] = useState(false)
 
 
-  async function loadIncidents(){
-    if(loading)
+  async function loadIncidents() {
+    if (loading)
       return
 
-    if(totalCases > 0 && incidents.length >= totalCases)
+    if (totalCases > 0 && incidents.length >= totalCases)
       return
 
     setLoading(true)
@@ -27,11 +27,11 @@ export default function Incidents() {
     const response = await api.get('/incidents', {
       params: { page }
     })
-    setIncidents([... incidents, ...response.data])
+    setIncidents([...incidents, ...response.data])
     setTotalCases(response.headers['x-total-count'])
     setPage(page + 1)
     setLoading(false)
-}
+  }
 
   useEffect(() => {
     loadIncidents()
@@ -66,16 +66,16 @@ export default function Incidents() {
         renderItem={({ item: incident }) => (
           <View style={styles.incident}>
             <Text style={styles.incidentProperty}>ONG:</Text>
-        <Text style={styles.incidentValue}>{incident.name}</Text>
+            <Text style={styles.incidentValue}>{incident.name}</Text>
 
             <Text style={styles.incidentProperty}>CASO:</Text>
             <Text style={styles.incidentValue}>{incident.title}</Text>
 
             <Text style={styles.incidentProperty}>VALOR:</Text>
-        <Text style={styles.incidentValue}>
-          {Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'})
-          .format(incident.value)}
-          </Text>
+            <Text style={styles.incidentValue}>
+              {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
+                .format(incident.value)}
+            </Text>
 
             <TouchableOpacity
               style={styles.detailsButton}

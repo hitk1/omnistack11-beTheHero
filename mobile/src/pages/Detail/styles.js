@@ -25,14 +25,14 @@ export default StyleSheet.create({
     incidentProperty: {
         fontSize: 14,
         color: '#41414D',
-        fontWeight: 'bold',
-        marginBottom: 24,
+        fontWeight: 'bold'
     },
-
+    
     incidentValue: {
         marginTop: 8,
         fontSize: 15,
-        color: '#737380'
+        color: '#737380',
+        marginBottom: 24,
     },
 
     contactBox: {
